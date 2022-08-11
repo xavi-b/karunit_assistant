@@ -1,0 +1,4 @@
+[submodule "third-party/speechrecognitor"]
+	path = third-party/speechrecognitor
+	url = git@github.com:xavi-b/speechrecognitor.git
+	branch = master

@@ -1,23 +1,43 @@
 TEMPLATE        = lib
 CONFIG         += plugin c++17
 DEFINES        += QT_DEPRECATED_WARNINGS
-QT             += core widgets
+QT             += quick
 TARGET          = karunit_assistant_plugin
 DESTDIR         = $$PWD/../karunit/app/plugins
 
-LIBS += -L$$PWD/../../plugininterface/ -lkarunit_plugininterface
-INCLUDEPATH += $$PWD/../../plugininterface
+unix {
+target.path = /usr/local/bin/plugins
+INSTALLS += target
+}
 
-LIBS += -L$$PWD/../../common/ -lkarunit_common
-INCLUDEPATH += $$PWD/../../common
+libspeechrecognitor.target = $$PWD/third-party/speechrecognitor/build/lib/libspeechrecognitor.so
+libspeechrecognitor.commands += \
+    mkdir -p $$PWD/third-party/speechrecognitor/build \
+    && cd $$PWD/third-party/speechrecognitor/build \
+    && cmake .. \
+    && make -j4
+QMAKE_EXTRA_TARGETS += libspeechrecognitor
+PRE_TARGETDEPS += $$libspeechrecognitor.target
 
-LIBS += -L$$PWD/../karunit/third-party/xblog/ -lxblog
-INCLUDEPATH += $$PWD/../karunit/third-party/xblog/src
+libspeechrecognitor.files = $$PWD/third-party/speechrecognitor/build/lib/libspeechrecognitor.so*
+libspeechrecognitor.path = /usr/lib
+INSTALLS += libspeechrecognitor
+
+LIBS += -L$$PWD/third-party/speechrecognitor/build/lib -lspeechrecognitor
+INCLUDEPATH += $$PWD/third-party/speechrecognitor/lib/include
+
+LIBS += -L$$PWD/../karunit/plugininterface/ -lkarunit_plugininterface
+INCLUDEPATH += $$PWD/../karunit/plugininterface
+
+LIBS += -L$$PWD/../karunit/common/ -lkarunit_common
+INCLUDEPATH += $$PWD/../karunit/common
+
+LIBS += -L$$PWD/../karunit/third-party/xblog/lib -lxblog
+INCLUDEPATH += $$PWD/../karunit/third-party/xblog/include
 
 SUBDIRS += \
-    src/
+    src/ \
+    res/
 
 include(src/src.pri)
-
-RESOURCES += \
-    karunit_assistant.qrc
+include(res/res.pri)
