@@ -8,7 +8,7 @@ QString KU_Assistant_Plugin::name() const
 
 QString KU_Assistant_Plugin::id() const
 {
-    return "karunit_Assistant";
+    return "karunit_assistant";
 }
 
 KU::PLUGIN::PluginVersion KU_Assistant_Plugin::version() const

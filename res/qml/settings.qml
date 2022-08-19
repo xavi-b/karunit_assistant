@@ -5,6 +5,26 @@ import QtQuick.Layouts 1.15
 import Karunit 1.0
 import KarunitPlugins 1.0
 
-Item {
+ColumnLayout {
     anchors.fill: parent
+
+    Flickable {
+        Layout.fillHeight: true
+        Layout.fillWidth: true
+
+        contentWidth: text.width
+        contentHeight: text.height
+
+        TextArea {
+            id: text
+            readOnly: true
+            text: KUPAssistantPluginConnector.configuration
+        }
+    }
+
+    Button {
+        Layout.alignment: Qt.AlignHCenter
+        text: KUPAssistantPluginConnector.listening ? qsTr("Cancel") : qsTr("Listen")
+        onClicked: KUPAssistantPluginConnector.listening ? KUPAssistantPluginConnector.cancel() : KUPAssistantPluginConnector.listen()
+    }
 }

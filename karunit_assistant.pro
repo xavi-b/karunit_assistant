@@ -1,7 +1,7 @@
 TEMPLATE        = lib
 CONFIG         += plugin c++17
 DEFINES        += QT_DEPRECATED_WARNINGS
-QT             += quick
+QT             += quick multimedia
 TARGET          = karunit_assistant_plugin
 DESTDIR         = $$PWD/../karunit/app/plugins
 

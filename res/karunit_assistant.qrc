@@ -1,6 +1,7 @@
 <RCC>
-    <qresource prefix="/karunit_wiringpi">
+    <qresource prefix="/karunit_assistant">
         <file alias="settings.qml">qml/settings.qml</file>
         <file alias="about.qml">qml/about.qml</file>
+        <file>default.json</file>
     </qresource>
 </RCC>

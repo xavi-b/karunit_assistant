@@ -1,0 +1,150 @@
+{
+    "commands": [
+        {
+            "keywords": [
+                [
+                    "afficher",
+                    "musique"
+                ],
+                [
+                    "show",
+                    "music"
+                ]
+            ],
+            "result_data": "",
+            "permanent_data": [],
+            "show_data": "karunit_bluetoothmusic",
+            "signal": ""
+        },
+        {
+            "keywords": [
+                [
+                    "musique",
+                    "précédente"
+                ],
+                [
+                    "previous",
+                    "music"
+                ]
+            ],
+            "result_data": "",
+            "permanent_data": [],
+            "show_data": "",
+            "signal": "mediaPrev"
+        },
+        {
+            "keywords": [
+                [
+                    "musique",
+                    "suivante"
+                ],
+                [
+                    "next",
+                    "music"
+                ]
+            ],
+            "result_data": "",
+            "permanent_data": [],
+            "show_data": "",
+            "signal": "mediaNext"
+        },
+        {
+            "keywords": [
+                [
+                    "musique",
+                    "stop"
+                ],
+                [
+                    "stop",
+                    "musique"
+                ],
+                [
+                    "musique",
+                    "pause"
+                ],
+                [
+                    "pause",
+                    "musique"
+                ],
+                [
+                    "stop",
+                    "music"
+                ],
+                [
+                    "pause",
+                    "music"
+                ]
+            ],
+            "result_data": "",
+            "permanent_data": [],
+            "show_data": "",
+            "signal": "mediaPause"
+        },
+        {
+            "keywords": [
+                [
+                    "musique",
+                    "jouer"
+                ],
+                [
+                    "jouer",
+                    "musique"
+                ],
+                [
+                    "play",
+                    "music"
+                ],
+                [
+                    "resume",
+                    "music"
+                ]
+            ],
+            "result_data": "",
+            "permanent_data": [],
+            "show_data": "",
+            "signal": "mediaPlay"
+        },
+        {
+            "keywords": [
+                [
+                    "camera",
+                    "arrière"
+                ],
+                [
+                    "back",
+                    "camera"
+                ]
+            ],
+            "result_data": "",
+            "permanent_data": [],
+            "show_data": "karunit_camera",
+            "signal": ""
+        },
+        {
+            "keywords": [
+                [
+                    "afficher",
+                    "arrière"
+                ],
+                [
+                    "show",
+                    "back"
+                ],
+                [
+                    "send",
+                    "back"
+                ],
+                [
+                    "send",
+                    "l",
+                    "e",
+                    "d"
+                ]
+            ],
+            "result_data": "text",
+            "permanent_data": [],
+            "show_data": "karunit_leddisplay",
+            "signal": "send_led"
+        }
+    ]
+}
